@@ -62,7 +62,7 @@ These images are included to better illustrate the functionality and user interf
 ### Admin Interface Screenshots
 
 1. **Dashboard Overview**  
-   ![Admin Dashboard](UI-Screenshots/Admin-index.png)
+   ![Admin Dashboard](UI-Screenshots/Admin-Index.png)
 
 ### User Interface Screenshots
 
