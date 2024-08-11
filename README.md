@@ -59,12 +59,12 @@ This project provides a comprehensive solution for restaurants to manage their m
 
 These images are included to better illustrate the functionality and user interface of the Online Food Order System and showcase different parts of the application, including the customer interface, admin panel, and key features.
 
-### Admin Interface Screenshots
+### Admin Interface Screenshot
 
 1. **Dashboard Overview**  
    ![Admin Dashboard](UI-Screenshots/Admin-Index.png)
 
-### User Interface Screenshots
+### User Interface Screenshot
 
 1. **User Interface Overview**  
    ![User Index](UI-Screenshots/User-Index.png)
