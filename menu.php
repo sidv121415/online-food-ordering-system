@@ -120,7 +120,7 @@ section:nth-child(even) {
     <?php endforeach; ?>
 
     <!-- Toast Notification Container -->
-    <div id="toast" class="toast" style="background: rgba(80, 198, 168, 0.9); border: 1px solid rgba(80, 198, 168, 0.8); font-size: 16px;">
+    <div id="toast" class="toast" style="background: rgba(255, 182, 182, 0.9); border: 1px solid rgba(255, 182, 182, 1); font-size: 16px;">
         <button class="toast-btn toast-close">&times;</button>
         <span class="pt-3"><strong>You must log in to add items to the cart.</strong></span><br>
         <button class="toast-btn toast-ok">Okay</button>
