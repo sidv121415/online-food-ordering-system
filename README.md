@@ -89,7 +89,7 @@ Follow these steps to set up the project locally:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/asnaassalam/online-food-order-system.git
+   git clone https://github.com/asnaassalam/online-food-ordering-system.git
 
 2. **Navigate to the project directory:**
     
@@ -101,7 +101,7 @@ Follow these steps to set up the project locally:
 
 ### Running The Application
     - To run the application locally, start your Apache server and navigate to the project directory in your browser:
-        http://localhost/online-food-order-system
+        http://localhost/online-food-ordering-system
         
        
 ## Access Instructions
@@ -124,7 +124,7 @@ To log in to the admin panel:
 
    Navigate to the following URL in your web browser:
 
-    http://localhost/online-food-order-system/Admin
+    http://localhost/online-food-ordering-system/Admin
 
 ### User Access
 
@@ -145,7 +145,7 @@ Example registration details:
 
     Navigate to the following URL in your web browser:
 
-     http://localhost/online-food-order-system/index.php
+     http://localhost/online-food-ordering-system/index.php
 
 After logging in, you can browse the menu, add items to your cart, place orders, and view your order history.
 
