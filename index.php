@@ -483,14 +483,14 @@ $conn->close();
     </div>
   </footer>
 
-
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js">
   </script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
   <script>
     $(document).ready(function() {
       console.log('Page is ready. Calling load_cart_item_number.');
