@@ -134,13 +134,13 @@ $conn->close();
 
                           <h3>Appetizer</h3>
                           <p>Start your meal with our delicious appetizers that set the tone for a delightful dining experience.</p>
-                          <a href="menu.php#Appetizer">
+                          <a href="menu.php#appetizer">
                             <button class="explore-btn">Explore Variety</button></a>
                         </div>
                       </div>
                       <div class="card-bottom">
                         <h3>Appetizer</h3>
-                        <a href="menu.php#Appetizer">
+                        <a href="menu.php#appetizer">
                           <button class="explore-btn">Explore Variety</button></a>
                       </div>
                     </div>
@@ -152,13 +152,13 @@ $conn->close();
 
                           <h3>Pizza</h3>
                           <p>Indulge in our wide variety of pizzas, each crafted with the finest ingredients and baked to perfection.</p>
-                          <a href="menu.php#Pizza">
+                          <a href="menu.php#pizza">
                             <button class="explore-btn">Explore Variety</button></a>
                         </div>
                       </div>
                       <div class="card-bottom">
                         <h3>Pizza</h3>
-                        <a href="menu.php#Pizza">
+                        <a href="menu.php#pizza">
                           <button class="explore-btn">Explore Variety</button></a>
                       </div>
                     </div>
@@ -170,13 +170,13 @@ $conn->close();
 
                           <h3>Burger</h3>
                           <p>Savor our juicy burgers, loaded with fresh toppings and bursting with flavor in every bite.</p>
-                          <a href="menu.php#Burger">
+                          <a href="menu.php#burger">
                             <button class="explore-btn">Explore Variety</button></a>
                         </div>
                       </div>
                       <div class="card-bottom">
                         <h3>Burger</h3>
-                        <a href="menu.php#Burger">
+                        <a href="menu.php#burger">
                           <button class="explore-btn">Explore Variety</button></a>
                       </div>
                     </div>
@@ -188,13 +188,13 @@ $conn->close();
 
                           <h3>Beverage</h3>
                           <p>Quench your thirst with our selection of refreshing beverages, perfect for any meal.</p>
-                          <a href="menu.php#Beverage">
+                          <a href="menu.php#beverage">
                             <button class="explore-btn">Explore Variety</button></a>
                         </div>
                       </div>
                       <div class="card-bottom">
                         <h3>Beverage</h3>
-                        <a href="menu.php#Beverage">
+                        <a href="menu.php#beverage">
                           <button class="explore-btn">Explore Variety</button></a>
                       </div>
                     </div>
