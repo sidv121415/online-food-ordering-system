@@ -49,13 +49,16 @@ if (isset($_SESSION['email'])) {
         $result = $stmt->get_result();
         $row = $result->fetch_assoc();
 
-        echo $row['qty'];
+        // Check if 'qty' is null and set to 0 if so
+        $quantity = $row['qty'] !== null ? $row['qty'] : 0;
+
+        echo $quantity;
     }
 
     
 
 
     
-    
+   
 } 
 ?>

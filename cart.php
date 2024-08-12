@@ -31,8 +31,8 @@ $itemsResult = $stmt->get_result();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css' />
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css' />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' />
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -153,8 +153,8 @@ $itemsResult = $stmt->get_result();
   </div>
 
   <?php
-    include_once ('footer.html');
-   ?>
+  include_once('footer.html');
+  ?>
 
   <!-- Bootstrap JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
@@ -162,9 +162,9 @@ $itemsResult = $stmt->get_result();
   <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
   <script>
     $(document).ready(function() {
-  console.log('Page is ready. Calling load_cart_item_number.');
-  load_cart_item_number();
-});
+      console.log('Page is ready. Calling load_cart_item_number.');
+      load_cart_item_number();
+    });
   </script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -248,6 +248,13 @@ $itemsResult = $stmt->get_result();
         let xhr = new XMLHttpRequest();
         xhr.open('POST', 'update_cart_quantity.php', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            // Update the cart item number after successful quantity update
+            load_cart_item_number();
+          }
+        };
+
         xhr.send(`id=${itemId}&quantity=${newQuantity}&total_price=${itemTotalPrice}`);
 
         // If the checkbox is checked, update the subtotal accordingly
@@ -301,6 +308,12 @@ $itemsResult = $stmt->get_result();
           let xhr = new XMLHttpRequest();
           xhr.open('POST', 'delete_cart_item.php', true);
           xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+              // After successfully deleting the item, update the cart item number
+              load_cart_item_number();
+            }
+          };
           xhr.send(`id=${itemId}`);
         });
       });
@@ -310,7 +323,7 @@ $itemsResult = $stmt->get_result();
       updateDeliveryFee();
 
       load_cart_item_number();
-
+      // Function to update the cart item number in the UI
       function load_cart_item_number() {
         $.ajax({
           url: 'action.php',
@@ -323,7 +336,6 @@ $itemsResult = $stmt->get_result();
           }
         });
       }
-
 
 
 
