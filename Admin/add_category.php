@@ -8,7 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "INSERT INTO menucategory (catName, dateCreated) VALUES ('$catName', '$dateCreated')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Category added successfully";
+        echo '<script>alert("Category added successfully."); window.location.href="admin_menu.php";</script>';
+        exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

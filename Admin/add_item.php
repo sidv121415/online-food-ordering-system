@@ -49,7 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->bind_param("ssssssss", $itemName, $price, $description, $image, $status, $catName, $dateCreated, $updatedDate);
 
             if ($stmt->execute()) {
-                echo "New item added successfully";
+                echo '<script>alert("New item added successfully."); window.location.href="admin_menu.php";</script>';
+                exit();
             } else {
                 echo "Error: " . $stmt->error;
             }
