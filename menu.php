@@ -24,30 +24,33 @@ while ($row = $categoryResult->fetch_assoc()) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="menu.css" />
     <title>Menu</title>
     <style>
-.disabled-button {
-    background-color: gray;
-    color: white;
-    cursor: not-allowed;
-    pointer-events: none;
-}
+        .disabled-button {
+            background-color: gray;
+            color: white;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
 
-.disabled-button i {
-    color: white;
-}
-section:nth-child(odd) {
-  background-color: #feead4 ;
+        .disabled-button i {
+            color: white;
+        }
 
-  /* Set background color for odd sections */
-}
+        section:nth-child(odd) {
+            background-color: #feead4;
 
-section:nth-child(even) {
-  background-color: #ffe4c2;
-  /* Set background color for even sections */
-}
- 
+            /* Set background color for odd sections */
+        }
+
+        section:nth-child(even) {
+            background-color: #ffe4c2;
+            /* Set background color for even sections */
+        }
     </style>
 </head>
 
@@ -62,9 +65,9 @@ section:nth-child(even) {
     }
     ?>
     <div class="heading">
-    <div class="row heading-title">Our Menu</div>
-    <div class="row heading-description">~Discover a feast of flavors with our exciting menu!</div>
-</div>
+        <div class="row heading-title">Our Menu</div>
+        <div class="row heading-description">~Discover a feast of flavors with our exciting menu!</div>
+    </div>
 
 
 
@@ -82,7 +85,7 @@ section:nth-child(even) {
                     while ($row = $result->fetch_assoc()) :
                         $buttonClass = $row['status'] == 'Unavailable' ? 'disabled-button' : '';
                     ?>
-                        <div class="col-md-6 col-lg-3 col-sm-12 menu-item col-xs-12">
+                        <div class="col-md-6 col-lg-3 col-sm-12 menu-item col-xs-12" data-aos="fade-up" data-os-interval="300"  data-aos-anchor-placement="top-center" >
                             <div class=" mt-4" style="background-color: #fdd9c9; border-radius: 5px;">
                                 <img src="uploads/<?= $row['image'] ?>" alt="image" class="card-img-top" height="250">
                                 <div class="card-body">
@@ -127,101 +130,104 @@ section:nth-child(even) {
     </div>
 
     <?php
-    include_once ('footer.html');
+    include_once('footer.html');
     ?>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
-
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script type="text/javascript">
-       $(document).ready(function() {
+        $(document).ready(function() {
 
-function userIsLoggedIn() {
-    return <?php echo isset($_SESSION['userloggedin']) && $_SESSION['userloggedin'] === true ? 'true' : 'false'; ?>;
-}
+            function userIsLoggedIn() {
+                return <?php echo isset($_SESSION['userloggedin']) && $_SESSION['userloggedin'] === true ? 'true' : 'false'; ?>;
+            }
 
-function showToast() {
-    var toast = $('#toast');
-    toast.addClass('show'); // Add the 'show' class to make the toast visible
+            function showToast() {
+                var toast = $('#toast');
+                toast.addClass('show'); // Add the 'show' class to make the toast visible
 
-    // Automatically hide the toast after 3 seconds
-    setTimeout(function() {
-        toast.removeClass('show'); // Remove the 'show' class to hide the toast
-    }, 5000);
-}
+                // Automatically hide the toast after 3 seconds
+                setTimeout(function() {
+                    toast.removeClass('show'); // Remove the 'show' class to hide the toast
+                }, 5000);
+            }
 
-function getUserEmail() {
-    return "<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>";
-}
+            function getUserEmail() {
+                return "<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>";
+            }
 
-$(".addItemBtn").click(function(e) {
-    e.preventDefault(); // Prevent the default action
+            $(".addItemBtn").click(function(e) {
+                e.preventDefault(); // Prevent the default action
 
-    if (!userIsLoggedIn()) {
-        showToast();
-        return;
-    }
+                if (!userIsLoggedIn()) {
+                    showToast();
+                    return;
+                }
 
-    // Check if the button has the 'disabled-button' class
-    if ($(this).hasClass('disabled-button')) {
-        return; // Do nothing if the item is unavailable
-    }
+                // Check if the button has the 'disabled-button' class
+                if ($(this).hasClass('disabled-button')) {
+                    return; // Do nothing if the item is unavailable
+                }
 
-    var email = getUserEmail();
+                var email = getUserEmail();
 
-    var $form = $(this).closest(".form-submit");
-    var pid = $form.find(".pid").val();
-    var pname = $form.find(".pname").val();
-    var pprice = $form.find(".pprice").val();
-    var pimage = $form.find(".pimage").val();
-    var pcode = $form.find(".pcode").val();
-    var pqty = 1; // Default quantity
+                var $form = $(this).closest(".form-submit");
+                var pid = $form.find(".pid").val();
+                var pname = $form.find(".pname").val();
+                var pprice = $form.find(".pprice").val();
+                var pimage = $form.find(".pimage").val();
+                var pcode = $form.find(".pcode").val();
+                var pqty = 1; // Default quantity
 
-    $.ajax({
-        url: 'action.php',
-        method: 'post',
-        data: {
-            pid: pid,
-            pname: pname,
-            pprice: pprice,
-            pqty: pqty,
-            pimage: pimage,
-            pcode: pcode,
-            email: email
-        },
-        success: function(response) {
-            $("#message").html(response);
-            window.scrollTo(0, 0);
+                $.ajax({
+                    url: 'action.php',
+                    method: 'post',
+                    data: {
+                        pid: pid,
+                        pname: pname,
+                        pprice: pprice,
+                        pqty: pqty,
+                        pimage: pimage,
+                        pcode: pcode,
+                        email: email
+                    },
+                    success: function(response) {
+                        $("#message").html(response);
+                        window.scrollTo(0, 0);
+                        load_cart_item_number();
+                    }
+                });
+            });
+
+            // Close button functionality
+            $('.toast-close').click(function() {
+                $('#toast').removeClass('show');
+            });
+            // Okay button redirection
+            $('.toast-ok').click(function() {
+                window.location.href = 'login.php'; // Redirect to login.php
+            });
+
             load_cart_item_number();
-        }
-    });
-});
 
-// Close button functionality
-$('.toast-close').click(function() {
-    $('#toast').removeClass('show');
-});
-// Okay button redirection
-$('.toast-ok').click(function() {
-    window.location.href = 'login.php'; // Redirect to login.php
-});
-
-load_cart_item_number();
-
-function load_cart_item_number() {
-    $.ajax({
-        url: 'action.php',
-        method: 'get',
-        data: {
-            cartItem: "cart_item"
-        },
-        success: function(response) {
-            $("#cart-item").html(response);
-        }
-    });
-}
-});
-
+            function load_cart_item_number() {
+                $.ajax({
+                    url: 'action.php',
+                    method: 'get',
+                    data: {
+                        cartItem: "cart_item"
+                    },
+                    success: function(response) {
+                        $("#cart-item").html(response);
+                    }
+                });
+            }
+        });
     </script>
 
 </body>

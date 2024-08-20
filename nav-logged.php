@@ -24,7 +24,7 @@ function get_UserInfo($email)
   $stmt = $conn->prepare("SELECT  profile_image FROM users WHERE email = ?");
   $stmt->bind_param("s", $email);
   $stmt->execute();
-  $stmt->bind_result( $profile_image);
+  $stmt->bind_result($profile_image);
   $stmt->fetch();
   $stmt->close();
   return [
@@ -52,8 +52,8 @@ $userinfo = get_UserInfo($useremail);
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!--Icon-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-   <!-- Chewy Font -->
-   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Chewy Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
   <title>Navbar</title>
@@ -62,6 +62,7 @@ $userinfo = get_UserInfo($useremail);
       margin: 0;
       padding: 0;
     }
+
     body {
       background-color: #feead4;
       font-family: "Poppins", sans-serif;
@@ -194,12 +195,13 @@ $userinfo = get_UserInfo($useremail);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .dropdown-toggle{
-      color:#1d1818;
+    .dropdown-toggle {
+      color: #1d1818;
       text-decoration: none;
       transition: color 0.3s ease;
     }
-    .dropdown-toggle:hover{
+
+    .dropdown-toggle:hover {
       color: #fb4a36;
     }
 
@@ -244,10 +246,10 @@ $userinfo = get_UserInfo($useremail);
       color: green;
       font-size: 25px;
       cursor: pointer;
-      
+
     }
 
-    
+
 
     /* Profile icon hover effect */
     .nav-item.dropdown .nav-link:hover {
@@ -285,44 +287,55 @@ $userinfo = get_UserInfo($useremail);
       border-radius: 50%;
       object-fit: cover;
     }
-    .offcanvas-body{
-  background: #ffbda1;
-}
-.offcanvas-header{
-  border-bottom: 1px solid #fb4a36;
-}
-.btn-close{
-  color: red !important;
-}
 
+    .offcanvas-body {
+      background: #ffbda1;
+    }
 
+    .offcanvas-header {
+      border-bottom: 1px solid #fb4a36;
+    }
+
+    .btn-close {
+      color: red !important;
+    }
+
+    .navbar .active {
+
+      color: #fb4a36;
+      font-weight: 700;
+    }
   </style>
 </head>
 
 <body>
-  <!--Navbar-->
+  <?php
+  // Get the current page name
+  $current_page = basename($_SERVER['PHP_SELF']);
+  ?>
+
+  <!-- Navbar -->
   <div>
-    <nav class="navbar  navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-md fixed-top">
       <div class="container-fluid nav-container">
         <a class="navbar-brand me-auto logo" href="index.php">Grill 'N' Chill</a>
-        <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header ">
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
               Flavour Fiesta
             </h5>
-            <button type="button" class="btn-close" aria-label="Close" id="closeOffcanvas" style="color: red;"></button>
+            <button type="button" class="btn-close btn-close-red" aria-label="Close" id="closeOffcanvas"></button>
           </div>
           <div class="offcanvas-body text-center">
             <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" aria-current="page" href="index.php">Home</a>
+                <a class="nav-link mx-lg-2 <?php echo $current_page == 'index.php' ? 'active' : ''; ?>" aria-current="page" href="index.php">Home</a>
               </li>
-
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle mx-lg-2" href="menu.php" role="button" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle mx-lg-2 <?php echo $current_page == 'menu.php' ? 'active' : ''; ?>" href="menu.php" role="button" aria-haspopup="true" aria-expanded="false">
                   Menu
                 </a>
-                <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" href="menu.php#appetizer">Appetizers</a></li>
                   <li><a class="dropdown-item" href="menu.php#pizza">Pizza</a></li>
                   <li><a class="dropdown-item" href="menu.php#burger">Burger</a></li>
@@ -330,22 +343,23 @@ $userinfo = get_UserInfo($useremail);
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="index.php#Reservation">Reservation</a>
+                <a class="nav-link mx-lg-2 <?php echo $current_page == 'index.php#Reservation' ? 'active' : ''; ?>" href="index.php#Reservation">Reservation</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="index.php#About-Us">About Us</a>
+                <a class="nav-link mx-lg-2 <?php echo $current_page == 'index.php#About-Us' ? 'active' : ''; ?>" href="index.php#About-Us">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="index.php#review">Review</a>
+                <a class="nav-link mx-lg-2 <?php echo $current_page == '#review' ? 'active' : ''; ?>" href="#review">Review</a>
               </li>
             </ul>
           </div>
         </div>
-        <a class="nav-link cart" href="cart.php"><i class="fas fa-shopping-cart"></i> <span id="cart-item" class="badge badge-danger"></span></a>
+        <a class="nav-link cart <?php echo $current_page == 'cart.php' ? 'active' : ''; ?>" href="cart.php"><i class="fas fa-shopping-cart"></i>
+          <span id="cart-item" class="badge badge-danger"></span></a>
         <!-- Profile Icon with Dropdown Menu -->
         <li class="nav-item dropdown ms-3" style="list-style: none; ">
           <a href="#" class="dropdown-toggle" id="profileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img  src="uploads/<?php echo htmlspecialchars($userinfo['profile_image']); ?>" alt="Profile Picture" class="nav-profile">
+            <img src="uploads/<?php echo htmlspecialchars($userinfo['profile_image']); ?>" alt="Profile Picture" class="nav-profile">
           </a>
           <ul class="dropdown-menu" aria-labelledby="profileDropdown" style="margin-left: -50px;">
             <li><a class="dropdown-item" href="profile.php"><i class="fas fa-user-circle dropdown-icon"></i> Profile</a></li>
@@ -387,7 +401,58 @@ $userinfo = get_UserInfo($useremail);
       offcanvasNavbar.show();
     });
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+      const currentPage = window.location.pathname.split("/").pop(); // Get the current page name
 
+      function removeActiveClasses() {
+        navLinks.forEach(link => {
+          link.classList.remove("active");
+        });
+      }
+
+      function addActiveClassOnScroll() {
+        let currentSection = "Home"; // Default to Home if on index.php
+
+        // Check if the current page is index.php
+        if (currentPage === "index.php") {
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 60) {
+              currentSection = section.getAttribute("id");
+            }
+          });
+
+          removeActiveClasses();
+
+          if (currentSection === "Reservation" || currentSection === "About-Us" || currentSection === "review") {
+            const activeLink = document.querySelector(`.navbar-nav a[href*="${currentSection}"]`);
+            if (activeLink) {
+              activeLink.classList.add("active");
+            }
+          } else {
+            // Default to highlighting Home when on index.php
+            const homeLink = document.querySelector(`.navbar-nav a[href="index.php"]`);
+            if (homeLink) {
+              homeLink.classList.add("active");
+            }
+          }
+        } else {
+          // Highlight the current page if it's not index.php
+          const activeLink = document.querySelector(`.navbar-nav a[href="${currentPage}"]`);
+          if (activeLink) {
+            removeActiveClasses();
+            activeLink.classList.add("active");
+          }
+        }
+      }
+
+      window.addEventListener("scroll", addActiveClassOnScroll);
+      addActiveClassOnScroll(); // Call it initially to set the correct tab on page load
+    });
+  </script>
 
 
 

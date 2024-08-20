@@ -383,3 +383,17 @@
           left: 50%;
         }
 }
+/* Eye Toggle Icon Styles */
+.input-field .fa-eye,
+.input-field .fa-eye-slash {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.input-field .fa-eye:hover,
+.input-field .fa-eye-slash:hover {
+  color: #0056b3;
+}

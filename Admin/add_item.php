@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->bind_param("ssssssss", $itemName, $price, $description, $image, $status, $catName, $dateCreated, $updatedDate);
 
             if ($stmt->execute()) {
-                echo "New record created successfully";
+                echo "New item added successfully";
             } else {
                 echo "Error: " . $stmt->error;
             }

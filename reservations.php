@@ -29,15 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $reservedTime = $_POST['reservedTime']; // Input format is 'HH:MM'
     $reservedDate = $_POST['reservedDate']; // Input format is 'YYYY-MM-DD'
 
-    // Debug: Check the raw reservedTime input
-    echo "Raw Reserved Time: " . htmlspecialchars($reservedTime) . "<br>";
+    
 
     // Process reservedTime to ensure it includes seconds
     $reservedTimeWithSeconds = date('H:i:s', strtotime($reservedTime));
     
-    // Debug: Check the processed reservedTime
-    echo "Processed Reserved Time: " . htmlspecialchars($reservedTimeWithSeconds) . "<br>";
-
+   
     // Prepare SQL statement to insert data into reservations table
     $sql = "INSERT INTO reservations (email, name, contact, noOfGuests, reservedTime, reservedDate) 
             VALUES (?, ?, ?, ?, ?, ?)";

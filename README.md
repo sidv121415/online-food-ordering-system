@@ -53,7 +53,7 @@ This project provides a comprehensive solution for restaurants to manage their m
 - **Frontend**: HTML, CSS, JavaScript
 - **Backend**: PHP
 - **Database**: MySQL
-- **Others**: Bootstrap for UI components, jQuery for DOM manipulation
+- **Others**: Bootstrap for UI components, jQuery for DOM manipulation, AOS Library for scroll animation.
 
 ## Screenshots
 

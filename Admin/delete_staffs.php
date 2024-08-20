@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("s", $email);
 
     if ($stmt->execute()) {
-        echo 'User deleted successfully';
+        echo 'staff deleted successfully';
     } else {
         http_response_code(500);
         echo 'Error deleting reservation';

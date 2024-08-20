@@ -161,6 +161,7 @@ include 'sidebar.php';
           <select id="statusFilter" name="statusFilter" onchange="filterByStatus()">
             <option value="">All</option>
             <option value="Pending">Pending</option>
+            <option value="Approved">Approved</option>
             <option value="On Process">On Process</option>
             <option value="Completed">Completed</option>
             <option value="Cancelled">Cancelled</option>
@@ -201,6 +202,7 @@ include 'sidebar.php';
       <td>
         <select id='status-{$row['reservation_id']}' onchange=\"updateStatus('{$row['reservation_id']}', this.value)\" class='status-select'>
           <option value='Pending' " . ($row['status'] == 'Pending' ? 'selected' : '') . ">Pending</option>
+          <option value='Approved' " . ($row['status'] == 'Approved' ? 'selected' : '') . ">Approved</option>
           <option value='On Process' " . ($row['status'] == 'On Process' ? 'selected' : '') . ">On Process</option>
           <option value='Completed' " . ($row['status'] == 'Completed' ? 'selected' : '') . ">Completed</option>
           <option value='Cancelled' " . ($row['status'] == 'Cancelled' ? 'selected' : '') . ">Cancelled</option>

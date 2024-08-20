@@ -61,6 +61,8 @@ $conn->close();
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
   <title>Home</title>
 </head>
@@ -78,7 +80,7 @@ $conn->close();
     <section>
       <div class="container mt-3">
         <div class="row d-flex justify-content-start align-items-start main-container">
-          <div class="col-md-5 col-sm-12 col-lg-5 reveal main-text mb-4">
+          <div class="col-md-5 col-sm-12 col-lg-5 reveal main-text mb-4 text-align-justify mt-5" data-aos="fade-up">
             <h2>Welcome to <span style="color: #fb4a36;"> Grill 'N' Chill,</span></h2>
             <h4 style="color: gray; font-weight: 450;">"Where Hot Flavors Meet Cool Comfort."</h4>
             <p style="font-size: 18px; text-align: justify;">
@@ -121,14 +123,14 @@ $conn->close();
         </div>
         <div class="row">
           <section>
-            <div class="menu-section reveal">
+            <div class="menu-section">
               <div class="container-fluid">
                 <div class="row">
                   <div class="row d-flex justify-content-center align-items-center mb-4 font-weight-bold" id="text">
                     <h1>OUR <span>MENU</span></h1>
                   </div>
                   <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="category-card" style="background-image: url('images/appe-index.avif');">
+                    <div class="category-card" style="background-image: url('images/appe-index.avif');" data-aos="fade-up"  >
                       <div class="card-overlay">
                         <div class="overlay-content">
 
@@ -146,7 +148,7 @@ $conn->close();
                     </div>
                   </div>
                   <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="category-card" style="background-image: url('images/index-pizza.jpg');">
+                    <div class="category-card" style="background-image: url('images/index-pizza.jpg');" data-aos="fade-up" >
                       <div class="card-overlay">
                         <div class="overlay-content">
 
@@ -164,7 +166,7 @@ $conn->close();
                     </div>
                   </div>
                   <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="category-card" style="background-image: url('images/index-burger.avif');">
+                    <div class="category-card" style="background-image: url('images/index-burger.avif');" data-aos="fade-up"  >
                       <div class="card-overlay">
                         <div class="overlay-content">
 
@@ -182,7 +184,7 @@ $conn->close();
                     </div>
                   </div>
                   <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="category-card" style="background-image: url('images/bev-index.jpeg');">
+                    <div class="category-card" style="background-image: url('images/bev-index.jpeg');" data-aos="fade-up">
                       <div class="card-overlay">
                         <div class="overlay-content">
 
@@ -213,14 +215,14 @@ $conn->close();
   <section class="why-choose-us" id="why-choose-us">
     <div class="container">
       <div class="row why-us-content">
-        <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 mt-5 reveal d-flex justify-content-start align-items-start">
+        <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 mt-5 reveal d-flex justify-content-start align-items-start" data-aos="fade-up">
           <img src="images/Why-Us.png" width="100%" height="auto" loading="lazy" alt="delivery boy" class="w-100 delivery-img" data-delivery-boy>
         </div>
-        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 d-flex flex-column justify-content-center reveal">
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 d-flex flex-column justify-content-center reveal" data-aos="fade-up">
           <h1>WHY <span>CHOOSE US?</span></h1>
           <p class="content">Our restaurant offers the best food delivery service with fresh and high-quality ingredients.</p>
           <ul class="why-choose-us-list">
-            <li>
+            <li data-aos="fade-up">
               <div class="image-wrapper mt-1">
                 <img src="icons/delivery-man.png" alt="Fast Delivery">
               </div>
@@ -229,7 +231,7 @@ $conn->close();
                 <p>Enjoy prompt and reliable delivery to your doorstep.</p>
               </div>
             </li>
-            <li>
+            <li data-aos="fade-up">
               <div class="image-wrapper">
                 <img src="icons/vegetables.png" alt="Fresh Ingredients">
               </div>
@@ -238,7 +240,7 @@ $conn->close();
                 <p>We use only the freshest and highest quality ingredients.</p>
               </div>
             </li>
-            <li>
+            <li data-aos="fade-up">
               <div class="image-wrapper">
                 <img src="icons/waiter (1).png" alt="Friendly Service" class="why-us-image">
               </div>
@@ -247,7 +249,7 @@ $conn->close();
                 <p>Experience warm and welcoming customer service.</p>
               </div>
             </li>
-            <li>
+            <li data-aos="fade-up">
               <div class="image-wrapper">
                 <img src="icons/tasty.png" alt="Exceptional Taste">
               </div>
@@ -260,11 +262,11 @@ $conn->close();
         </div>
 
       </div>
-      <div class="popular reveal">
+      <div class="popular reveal" data-aos="fade-up">
         <h1 class="text-center mt-3">OUR <span>TOP PICKS</span></h1>
         <P class="text-center" style="font-size: 1.3rem;">~Handpicked meals that are a hit with everyone.</P>
 
-        <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="8000">
+        <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="8000" data-aos="fade-up">
           <div class="carousel-inner">
 
             <div id="toast" class="toast">
@@ -277,11 +279,11 @@ $conn->close();
             $isActive = true; // To set the first carousel item as active
 
             foreach ($chunkedItems as $items) {
-              echo '<div class="carousel-item' . ($isActive ? ' active' : '') . '">';
+              echo '<div class="carousel-item' . ($isActive ? ' active' : '') . '" >';
               echo '<div class="d-flex justify-content-center">';
 
               foreach ($items as $item) {
-                echo '<div class="card">';
+                echo '<div class="card" >';
                 echo '<img src="uploads/' . $item['image'] . '" class="card-img-top" alt="' . $item['itemName'] . '">';
                 echo '<div class="card-body">';
                 echo '<h5 class="card-title text-center">' . $item['itemName'] . '</h5>';
@@ -316,13 +318,13 @@ $conn->close();
   <div class="aboutus" id="About-Us" style="background-image: url(images/about-bg.png); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <section class="our-story-section p-5">
       <div class="container ">
-        <div class="row">
+        <div class="row" data-aos="fade-up" >
           <h1 style="text-align: center;"><span style="color: #fb4a36;">ABOUT </span>US</h1>
           <h4 style="text-align: center;" class="mb-5">Crafting Memorable Meals!</h4>
         </div>
 
         <div class="story-content row mb-2">
-          <div class="story-text col-lg-6 col-md-6 col-sm-12 reveal">
+          <div class="story-text col-lg-6 col-md-6 col-sm-12 reveal mt-2" data-aos="fade-up" data-os-interval="300">
             <p>At <strong>Grill 'N' Chill</strong>, we are passionate about celebrating food. Our chefs bring a touch of creativity to every dish, ensuring a feast for your senses. Join us for an extraordinary dining experience that celebrates flavor and joy.</p>
             <p>Founded in [2020], Grill 'N' Chill has been at the forefront of culinary innovation. Our commitment to using the freshest ingredients, combined with our chefs' expertise, has earned us a reputation for excellence. We believe that dining is not just about eating; it's about experiencing the art of food.</p>
             <p>Whether you're looking for a romantic dinner, a family gathering, or a place to celebrate special occasions, Grill 'N' Chill offers the perfect ambiance and exquisite cuisine to make your visit unforgettable. Come and experience the joy of flavor with us!</p>
@@ -330,7 +332,7 @@ $conn->close();
               <i class="fa-solid fa-burger"></i>Order Now
             </a>
           </div>
-          <div class="story-image col-lg-6 col-md-6 col-sm-12 d-flex justify-content-end align-items-center slide-in-right">
+          <div class="story-image col-lg-6 col-md-6 col-sm-12 d-flex justify-content-end align-items-start slide-in-right" data-aos="fade-up">
             <img src="images/Burger.png" alt="Crafting Memorable Meals" style="width: 100%; height: auto;">
           </div>
         </div>
@@ -344,11 +346,11 @@ $conn->close();
 
   <!-- Table Reservation -->
   <section class="table-reservation" id="Reservation">
-    <div class="row text-center ms-4">
+    <div class="row text-center ms-4" data-aos="fade-up" >
       <h1 class="mb-2">TABLE <span style="color: #fb4a36;">RESERVATION</span></h1>
       <h5 class="mb-5">Book your dining experience with us and enjoy a delightful meal.</h5>
     </div>
-    <div class="table ms-4 me-5">
+    <div class="table ms-4 me-5" data-aos="fade-up">
       <div class="reservation row reveal">
         <div class="reservation-image col-lg-7 col-md-6 col-sm-12" style="background: none !important; padding: 0 !important;">
           <img src="images/table.jpg" alt="Reservation" style="background: none ; width: 100%; height: 100%; padding: 0 !important;" class=" w-100 h-100">
@@ -399,13 +401,13 @@ $conn->close();
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-          <div class="text-center mb-5">
+          <div class="text-center mb-5" data-aos="fade-up">
             <h1>Hear From Our <span>Happy Customers!</span></h1>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="clients-carousel owl-carousel">
+        <div class="clients-carousel owl-carousel" data-aos="fade-up">
           <div class="single-box">
             <div class="img-area"><img alt="" class="img-fluid" src="uploads/user-girl.png"></div>
             <div class="content">
@@ -490,7 +492,11 @@ $conn->close();
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js">
   </script>
-  
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+  AOS.init();
+</script>
   <script>
     $(document).ready(function() {
       console.log('Page is ready. Calling load_cart_item_number.');

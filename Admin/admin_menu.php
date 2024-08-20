@@ -67,6 +67,7 @@ include 'sidebar.php';
             <div>
                 <button onclick="openModal()"><i class="fas fa-plus"></i> &nbsp;Add New Category</button>
                 <button onclick="openItemModal()"> <i class="fas fa-plus"></i> &nbsp;Add New Item</button>
+                <button onclick="openViewCategoryModal()"> <i class="fas fa-eye"></i> &nbsp;View Categories</button>
             </div>
             <div class="search-bar ">
                 <select id="categoryFilter" onchange="filterCategories()">
@@ -277,8 +278,82 @@ include 'sidebar.php';
         </div>
     </div>
 
+   <!-- View Categories Modal -->
+<div class="modal" id="viewCategoryModal" >
+    <div class="modal-overlay"></div>
+    <div class="modal-container" style="background: #fef0e8;">
+        <div class="modal-header" style=" border-bottom: 1px solid #ffc9b3">
+            <h2>Categories</h2>
+            <span class="close-icon" onclick="closeViewCategoryModal()">&times;</span>
+        </div>
+        <div class="modal-content">
+            <div class="input-group">
+                <table id="categoryTable" style="width:100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th>Category Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $sql = "SELECT catName FROM menucategory";
+                        $result = mysqli_query($conn, $sql);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo "<tr>";
+                                echo "<td>{$row['catName']}</td>";
+                                echo "<td><button class='delete-btn' onclick=\"deleteCategory('{$row['catName']}')\"><i class='fas fa-trash'></i></button></td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='2'>No categories found</td></tr>";
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="modal-footer" style="border-top: 1px solid #ffc9b3">
+            <button type="button" class="button" onclick="closeViewCategoryModal()">Close</button>
+        </div>
+    </div>
+</div>
+
+    <script>
+         function openViewCategoryModal() {
+            document.getElementById('viewCategoryModal').classList.add('open');
+        }
+
+        function closeViewCategoryModal() {
+            document.getElementById('viewCategoryModal').classList.remove('open');
+        }
+
+        function deleteCategory(catName) {
+        if (confirm(`Are you sure you want to delete the category: ${catName}?`)) {
+            // Perform AJAX request to delete the category from the database
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "delete_category.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        alert("Category deleted successfully.");
+                        // Reload the modal content or remove the row from the table
+                        location.reload(); // Reload the page to reflect changes
+                    } else {
+                        alert("Failed to delete the category. Please try again.");
+                    }
+                }
+            };
+            xhr.send("catName=" + encodeURIComponent(catName));
+        }
+    }
+    </script>
+
+
     <?php
-    include_once ('footer.html');
+    include_once('footer.html');
     ?>
     <script>
         function togglePopular(itemId, checkbox) {
