@@ -132,7 +132,7 @@ include 'sidebar.php';
                       <td>
                           <span class='password-masked'>{$passwordMasked}</span>
                           <span class='password-visible' style='display: none;'>{$row['password']}</span>
-                          <i class='fas fa-eye toggle-password' onclick='togglePassword(this)'></i>
+                          <i class='fas fa-eye-slash toggle-password' onclick='togglePassword(this)'></i>
                       </td>
                       <td>
                           <button id='editbtn' onclick='openEditUserModal(this)' data-email='{$row['email']}' data-firstname='{$row['firstName']}' data-lastname='{$row['lastName']}' data-contact='{$row['contact']}' data-role='{$row['role']}' data-password='{$row['password']}'><i class='fas fa-edit'></i></button>
@@ -203,7 +203,7 @@ include 'sidebar.php';
           <div class="input-group">
             <input type="password" name="password" id="Password" class="input" required>
             <span class="toggle-password" onclick="togglePasswordVisibility()">
-              <i class="fas fa-eye" id="passwordIcon"></i>
+              <i class="fas fa-eye-slash" id="passwordIcon"></i>
             </span>
             <label for="password" class="label">Password</label>
           </div>
@@ -257,7 +257,7 @@ include 'sidebar.php';
           <div class="input-group">
             <input type="password" name="password" id="editPassword" class="input" required>
             <span class="toggle-password" onclick="toggleEditPasswordVisibility()">
-              <i class="fas fa-eye" id="editPasswordIcon"></i>
+              <i class="fas fa-eye-slash" id="editPasswordIcon"></i>
             </span>
             <label for="editPassword" class="label">Password</label>
           </div>
@@ -289,13 +289,13 @@ include 'sidebar.php';
       if (passwordMasked.style.display === 'none') {
         passwordMasked.style.display = 'inline';
         passwordVisible.style.display = 'none';
-        element.classList.remove('fa-eye-slash');
-        element.classList.add('fa-eye');
+        element.classList.remove('fa-eye');
+        element.classList.add('fa-eye-slash');
       } else {
         passwordMasked.style.display = 'none';
         passwordVisible.style.display = 'inline';
-        element.classList.remove('fa-eye');
-        element.classList.add('fa-eye-slash');
+        element.classList.remove('fa-eye-slash');
+        element.classList.add('fa-eye');
       }
     }
 
@@ -305,12 +305,12 @@ include 'sidebar.php';
 
       if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        passwordIcon.classList.remove('fa-eye');
-        passwordIcon.classList.add('fa-eye-slash');
-      } else {
-        passwordInput.type = 'password';
         passwordIcon.classList.remove('fa-eye-slash');
         passwordIcon.classList.add('fa-eye');
+      } else {
+        passwordInput.type = 'password';
+        passwordIcon.classList.remove('fa-eye');
+        passwordIcon.classList.add('fa-eye-slash');
       }
     }
 
@@ -368,12 +368,12 @@ include 'sidebar.php';
       const passwordIcon = document.getElementById('editPasswordIcon');
       if (passwordField.type === 'password') {
         passwordField.type = 'text';
-        passwordIcon.classList.remove('fa-eye');
-        passwordIcon.classList.add('fa-eye-slash');
-      } else {
-        passwordField.type = 'password';
         passwordIcon.classList.remove('fa-eye-slash');
         passwordIcon.classList.add('fa-eye');
+      } else {
+        passwordField.type = 'password';
+        passwordIcon.classList.remove('fa-eye');
+        passwordIcon.classList.add('fa-eye-slash');
       }
     }
 

@@ -45,7 +45,7 @@
 					<div class="input-field">
 						<i class="fas fa-lock"></i>
 						<input type="password" id="loginPassword" placeholder="Password" name="password" required onkeyup="hideAlertBox()" />
-						<i class="fas fa-eye" id="toggleLoginPassword" style="cursor: pointer;"></i>
+						<i class="fas fa-eye-slash" id="toggleLoginPassword" style="cursor: pointer;"></i>
 					</div>
 					<input type="submit" value="Login" class="submit solid" id="loginButton" />
 
@@ -53,9 +53,9 @@
 
 					if (isset($_GET['error'])) {
 						echo ('
-	<div class="alert alert-danger" id="alertbox" role="alert">
-	Email or Password is incorrect.
-</div>');
+	        <div class="alert alert-danger" id="alertbox" role="alert">
+	        Email or Password is incorrect.
+          </div>');
 					}
 
 					?>
@@ -82,7 +82,7 @@
 					<div class="input-field">
 						<i class="fas fa-lock"></i>
 						<input type="password" id="registerPassword" placeholder="Password" name="password" required onkeyup="hideAlertBox()" />
-						<i class="fas fa-eye" id="toggleRegisterPassword" style="cursor: pointer;"></i>
+						<i class="fas fa-eye-slash" id="toggleRegisterPassword" style="cursor: pointer;"></i>
 					</div>
 					<input type="submit" class="submit" value="Sign up" id="registerButton" />
 
@@ -120,7 +120,6 @@
 		</div>
 	</div>
 
-
 	<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 	<script>
 		// Toggle password visibility for login form
@@ -133,11 +132,11 @@ toggleLoginPassword.addEventListener('click', function() {
 
     // Toggle between eye and eye-slash icons
     if (type === 'password') {
-        this.classList.remove('fa-eye-slash');
-        this.classList.add('fa-eye');
-    } else {
         this.classList.remove('fa-eye');
         this.classList.add('fa-eye-slash');
+    } else {
+        this.classList.remove('fa-eye-slash');
+        this.classList.add('fa-eye');
     }
 });
 
@@ -151,11 +150,11 @@ toggleRegisterPassword.addEventListener('click', function() {
 
     // Toggle between eye and eye-slash icons
     if (type === 'password') {
-        this.classList.remove('fa-eye-slash');
-        this.classList.add('fa-eye');
-    } else {
         this.classList.remove('fa-eye');
         this.classList.add('fa-eye-slash');
+    } else {
+        this.classList.remove('fa-eye-slash');
+        this.classList.add('fa-eye');
     }
 });
 

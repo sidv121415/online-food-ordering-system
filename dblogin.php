@@ -48,7 +48,7 @@ try {
         $_SESSION['email'] = $email;
         $_SESSION['userloggedin'] = true;
 
-        echo '<script>alert("You are logged in!"); window.location.href="menu.php";</script>';
+        echo '<script>alert("User is logged in!"); window.location.href="menu.php";</script>';
         exit();
     } 
     // Check if the login details are correct for staff (admin or superadmin)
@@ -59,7 +59,7 @@ try {
             $_SESSION['email'] = $email;
             $_SESSION['adminloggedin'] = true;
 
-            header('Location: admin/index.php');
+            echo '<script>alert("Admin is logged in!"); window.location.href="Admin/index.php";</script>';
             exit();
         } else {
             // If the role is not admin or superadmin, redirect to the login page with an error
@@ -79,6 +79,3 @@ try {
 
 // Close the connection
 $conn->close();
-?>
-
-

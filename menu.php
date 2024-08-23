@@ -42,13 +42,13 @@ while ($row = $categoryResult->fetch_assoc()) {
         }
 
         section:nth-child(odd) {
-            background-color: #feead4;
+            background-color: #ffe4c2;
 
             /* Set background color for odd sections */
         }
 
         section:nth-child(even) {
-            background-color: #ffe4c2;
+            background-color: #feead4;
             /* Set background color for even sections */
         }
     </style>
@@ -85,7 +85,7 @@ while ($row = $categoryResult->fetch_assoc()) {
                     while ($row = $result->fetch_assoc()) :
                         $buttonClass = $row['status'] == 'Unavailable' ? 'disabled-button' : '';
                     ?>
-                        <div class="col-md-6 col-lg-3 col-sm-12 menu-item col-xs-12" data-aos="fade-up" data-os-interval="300"  data-aos-anchor-placement="top-center" >
+                        <div class="col-md-6 col-lg-3 col-sm-12 menu-item col-xs-12" data-aos="fade-up" data-os-interval="300" data-aos-anchor-placement="top-center">
                             <div class=" mt-4" style="background-color: #fdd9c9; border-radius: 5px;">
                                 <img src="uploads/<?= $row['image'] ?>" alt="image" class="card-img-top" height="250">
                                 <div class="card-body">

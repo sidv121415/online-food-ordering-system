@@ -32,13 +32,13 @@ section {
 }
 
 section:nth-child(odd) {
-  background-color: #feead4 ;
+  background-color: #ffe4c2;
 
   /* Set background color for odd sections */
 }
 
 section:nth-child(even) {
-  background-color: #ffe4c2;
+  background-color: #feead4;
   /* Set background color for even sections */
 }
 
