@@ -284,7 +284,7 @@ table tr:hover {
   cursor: pointer;
   outline: none;
 }
-.content button {
+button {
   background-color: #fb4a36;
   color: white;
   border: 2px solid #fb4a36;
@@ -294,7 +294,7 @@ table tr:hover {
   transition: all 0.3s ease;
   font-size: 1.2rem;
 }
-.content button:hover {
+button:hover {
   background-color: #fbdac7;
   color: #fb4a36;
   border: 2px solid #fb4a36;
