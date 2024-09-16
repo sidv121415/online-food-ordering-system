@@ -31,13 +31,10 @@ if ($result = $conn->query($sql)) {
 
 // Close database connection
 $conn->close();
-
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,13 +66,13 @@ $conn->close();
 
 <body>
   <?php
-
   if (isset($_SESSION['userloggedin']) && $_SESSION['userloggedin']) {
     include 'nav-logged.php';
   } else {
     include 'navbar.php';
   }
   ?>
+
   <div class="main">
     <section>
       <div class="container mt-3">
@@ -107,7 +104,6 @@ $conn->close();
                     <svg width="10" class="button__icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 15">
                       <path fill="currentColor" d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"></path>
                     </svg>
-
                     <svg class="button__icon-svg button__icon-svg--copy" xmlns="http://www.w3.org/2000/svg" width="10" fill="none" viewBox="0 0 14 15">
                       <path fill="currentColor" d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"></path>
                     </svg>
@@ -122,6 +118,7 @@ $conn->close();
           </div>
         </div>
         <div class="row">
+          <!-- Menu Section -->
           <section>
             <div class="menu-section">
               <div class="container-fluid">
@@ -130,10 +127,9 @@ $conn->close();
                     <h1>OUR <span>MENU</span></h1>
                   </div>
                   <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="category-card" style="background-image: url('images/appe-index.avif');" data-aos="fade-up"  >
+                    <div class="category-card" style="background-image: url('images/appe-index.avif');" data-aos="fade-up">
                       <div class="card-overlay">
                         <div class="overlay-content">
-
                           <h3>Appetizer</h3>
                           <p>Start your meal with our delicious appetizers that set the tone for a delightful dining experience.</p>
                           <a href="menu.php#appetizer">
@@ -148,10 +144,9 @@ $conn->close();
                     </div>
                   </div>
                   <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="category-card" style="background-image: url('images/index-pizza.jpg');" data-aos="fade-up" >
+                    <div class="category-card" style="background-image: url('images/index-pizza.jpg');" data-aos="fade-up">
                       <div class="card-overlay">
                         <div class="overlay-content">
-
                           <h3>Pizza</h3>
                           <p>Indulge in our wide variety of pizzas, each crafted with the finest ingredients and baked to perfection.</p>
                           <a href="menu.php#pizza">
@@ -166,10 +161,9 @@ $conn->close();
                     </div>
                   </div>
                   <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="category-card" style="background-image: url('images/index-burger.avif');" data-aos="fade-up"  >
+                    <div class="category-card" style="background-image: url('images/index-burger.avif');" data-aos="fade-up">
                       <div class="card-overlay">
                         <div class="overlay-content">
-
                           <h3>Burger</h3>
                           <p>Savor our juicy burgers, loaded with fresh toppings and bursting with flavor in every bite.</p>
                           <a href="menu.php#burger">
@@ -187,7 +181,6 @@ $conn->close();
                     <div class="category-card" style="background-image: url('images/bev-index.jpeg');" data-aos="fade-up">
                       <div class="card-overlay">
                         <div class="overlay-content">
-
                           <h3>Beverage</h3>
                           <p>Quench your thirst with our selection of refreshing beverages, perfect for any meal.</p>
                           <a href="menu.php#beverage">
@@ -209,7 +202,6 @@ $conn->close();
       </div>
     </section>
   </div>
-
 
   <!-- Why Choose Us Section  -->
   <section class="why-choose-us" id="why-choose-us">
@@ -260,8 +252,9 @@ $conn->close();
             </li>
           </ul>
         </div>
-
       </div>
+
+      <!-- Top picks section -->
       <div class="popular reveal" data-aos="fade-up">
         <h1 class="text-center mt-3">OUR <span>TOP PICKS</span></h1>
         <P class="text-center" style="font-size: 1.3rem;">~Handpicked meals that are a hit with everyone.</P>
@@ -308,21 +301,18 @@ $conn->close();
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-
       </div>
-
-
     </div>
   </section>
 
+  <!-- About Us section -->
   <div class="aboutus" id="About-Us" style="background-image: url(images/about-bg.png); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <section class="our-story-section p-5">
       <div class="container ">
-        <div class="row" data-aos="fade-up" >
+        <div class="row" data-aos="fade-up">
           <h1 style="text-align: center;"><span style="color: #fb4a36;">ABOUT </span>US</h1>
           <h4 style="text-align: center;" class="mb-5">Crafting Memorable Meals!</h4>
         </div>
-
         <div class="story-content row mb-2">
           <div class="story-text col-lg-6 col-md-6 col-sm-12 reveal mt-2" data-aos="fade-up" data-os-interval="300">
             <p>At <strong>Grill 'N' Chill</strong>, we are passionate about celebrating food. Our chefs bring a touch of creativity to every dish, ensuring a feast for your senses. Join us for an extraordinary dining experience that celebrates flavor and joy.</p>
@@ -340,13 +330,9 @@ $conn->close();
     </section>
   </div>
 
-
-
-
-
   <!-- Table Reservation -->
   <section class="table-reservation" id="Reservation">
-    <div class="row text-center ms-4" data-aos="fade-up" >
+    <div class="row text-center ms-4" data-aos="fade-up">
       <h1 class="mb-2">TABLE <span style="color: #fb4a36;">RESERVATION</span></h1>
       <h5 class="mb-5">Book your dining experience with us and enjoy a delightful meal.</h5>
     </div>
@@ -395,7 +381,6 @@ $conn->close();
     </div>
   </section>
 
-
   <!-- Review  -->
   <section class="testimonial" id="review">
     <div class="container">
@@ -413,7 +398,6 @@ $conn->close();
             <div class="content">
               <p>"The food was fresh, and the flavors were incredible. I loved the variety on the menu. A great place for family dinners."</p>
               <h4>-Ritika Singh</h4>
-
             </div>
           </div>
           <div class="single-box">
@@ -421,7 +405,6 @@ $conn->close();
             <div class="content">
               <p>"The online ordering process was seamless and easy to navigate. My food arrived hot and on time. The delivery service was very professional."</p>
               <h4>-Zidnan</h4>
-
             </div>
           </div>
           <div class="single-box">
@@ -429,7 +412,6 @@ $conn->close();
             <div class="content">
               <p>"Fantastic place! The burgers are juicy, and the pizzas are loaded with toppings. The staff is super friendly, and the service is quick. A new favorite spot!"</p>
               <h4>-Dave Wood</h4>
-
             </div>
           </div>
           <div class="single-box">
@@ -438,19 +420,12 @@ $conn->close();
               <span class="rating-star"><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i></span>
               <p>"The online ordering system is fantastic. It’s easy to customize my order, and the delivery is always prompt. The food arrives hot and tasty every time."</p>
               <h4>-jimmy kimmel</h4>
-
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </section>
-
-
-
-
-
 
   <!-- footer -->
   <footer>
@@ -485,6 +460,7 @@ $conn->close();
     </div>
   </footer>
 
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
   </script>
@@ -495,8 +471,8 @@ $conn->close();
   <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-  AOS.init();
-</script>
+    AOS.init();
+  </script>
   <script>
     $(document).ready(function() {
       console.log('Page is ready. Calling load_cart_item_number.');
@@ -598,5 +574,4 @@ $conn->close();
 
 
 </body>
-
 </html>
