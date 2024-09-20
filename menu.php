@@ -13,7 +13,6 @@ while ($row = $categoryResult->fetch_assoc()) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,8 +23,6 @@ while ($row = $categoryResult->fetch_assoc()) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="menu.css" />
     <title>Menu</title>
@@ -53,9 +50,7 @@ while ($row = $categoryResult->fetch_assoc()) {
         }
     </style>
 </head>
-
 <body>
-
     <?php
 
     if (isset($_SESSION['userloggedin']) && $_SESSION['userloggedin']) {
@@ -68,9 +63,6 @@ while ($row = $categoryResult->fetch_assoc()) {
         <div class="row heading-title">Our Menu</div>
         <div class="row heading-description">~Discover a feast of flavors with our exciting menu!</div>
     </div>
-
-
-
     <?php foreach ($categories as $category): ?>
         <section id="<?= strtolower($category) ?>">
             <div id="message"></div>
@@ -85,7 +77,7 @@ while ($row = $categoryResult->fetch_assoc()) {
                     while ($row = $result->fetch_assoc()) :
                         $buttonClass = $row['status'] == 'Unavailable' ? 'disabled-button' : '';
                     ?>
-                        <div class="col-md-6 col-lg-3 col-sm-12 menu-item col-xs-12" data-aos="fade-up" data-os-interval="300" data-aos-anchor-placement="top-center">
+                        <div class="col-md-6 col-lg-3 col-sm-12 menu-item col-xs-12">
                             <div class=" mt-4" style="background-color: #fdd9c9; border-radius: 5px;">
                                 <img src="uploads/<?= $row['image'] ?>" alt="image" class="card-img-top" height="250">
                                 <div class="card-body">
@@ -121,25 +113,18 @@ while ($row = $categoryResult->fetch_assoc()) {
             </div>
         </section>
     <?php endforeach; ?>
-
     <!-- Toast Notification Container -->
     <div id="toast" class="toast" style="background: rgba(255, 182, 182, 0.9); border: 1px solid rgba(255, 182, 182, 1); font-size: 16px;">
         <button class="toast-btn toast-close">&times;</button>
         <span class="pt-3"><strong>You must log in to add items to the cart.</strong></span><br>
         <button class="toast-btn toast-ok">Okay</button>
     </div>
-
+    <!--Footer-->
     <?php
     include_once('footer.html');
     ?>
-
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
     <script type="text/javascript">
         $(document).ready(function() {
 
@@ -231,5 +216,4 @@ while ($row = $categoryResult->fetch_assoc()) {
     </script>
 
 </body>
-
 </html>
