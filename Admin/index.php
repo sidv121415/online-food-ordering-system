@@ -4,8 +4,8 @@ session_start();
 
 // Check if admin is logged in
 if (!isset($_SESSION['adminloggedin']) || !$_SESSION['adminloggedin']) {
-  header('Location: ../login.php');
-  exit;
+    header('Location: ../login.php');
+    exit;
 }
 
 // Database connection
@@ -67,8 +67,20 @@ function calculateTotalReservations($conn)
 // Function to calculate percentage change
 function calculateChange($current, $previous)
 {
-    return $previous ? number_format((($current - $previous) / $previous) * 100, 2) : 0;
+    // Calculate percentage change
+    $change = $previous ? (($current - $previous) / $previous) * 100 : 0;
+
+    // Constrain the value between -100 and 100
+    if ($change < -100) {
+        return -100;
+    } elseif ($change > 100) {
+        return 100;
+    }
+
+    // Return the formatted change with two decimal points
+    return number_format($change, 2);
 }
+
 
 // Get total earnings from the beginning of time to today
 $totalEarning = calculateEarnings($conn, 'order_date', '1970-01-01 00:00:00', date('Y-m-d') . ' 23:59:59');
@@ -164,28 +176,28 @@ include 'sidebar.php';
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="index.css">
     <style>
-        .content{
-  margin-bottom: 40px;
- }
+        .content {
+            margin-bottom: 40px;
+        }
     </style>
 </head>
 
 <body>
-   
+
     <!-- sidebar -->
     <div class="sidebar">
         <button class="close-sidebar" id="closeSidebar">&times;</button>
-        
-        <!-- Profile Section -->
-    <div class="profile-section">
-      <img src="../uploads/<?php echo htmlspecialchars($admin_info['profile_image']); ?>" alt="Profile Picture">
-      <div class="info">
-        <h3>Welcome Back!</h3>
-        <p><?php echo htmlspecialchars($admin_info['firstName']) . ' ' . htmlspecialchars($admin_info['lastName']); ?></p>
-      </div>
-    </div>
 
-    <!-- Navigation Items -->
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <img src="../uploads/<?php echo htmlspecialchars($admin_info['profile_image']); ?>" alt="Profile Picture">
+            <div class="info">
+                <h3>Welcome Back!</h3>
+                <p><?php echo htmlspecialchars($admin_info['firstName']) . ' ' . htmlspecialchars($admin_info['lastName']); ?></p>
+            </div>
+        </div>
+
+        <!-- Navigation Items -->
 
         <ul>
             <li><a href="index.php" class="active"><i class="fas fa-chart-line"></i> Overview</a></li>
@@ -194,12 +206,12 @@ include 'sidebar.php';
             <li><a href="reservations.php"><i class="fas fa-calendar-alt"></i> Reservations</a></li>
             <li><a href="users.php"><i class="fas fa-users"></i> Users</a></li>
             <li><a href="reviews.php"><i class="fas fa-star"></i> Reviews</a></li>
-            <li><a href="staffs.php" ><i class="fas fa-users"></i> Staffs</a></li>
+            <li><a href="staffs.php"><i class="fas fa-users"></i> Staffs</a></li>
             <li><a href="profile.php"><i class="fas fa-user"></i> Profile Setting</a></li>
             <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
     </div>
-    
+
     <div class="content">
         <div class="header">
             <button id="toggleSidebar" class="toggle-button">
@@ -353,7 +365,7 @@ include 'sidebar.php';
 
             </div>
             <div class="bar-chart">
-                
+
                 <canvas id="orderStatusChart"></canvas>
             </div>
         </div>
@@ -369,9 +381,9 @@ include 'sidebar.php';
         </div>
 
     </div>
-   <?php
-   include_once ('footer.html');
-   ?>
+    <?php
+    include_once('footer.html');
+    ?>
     <script src="sidebar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
@@ -404,7 +416,7 @@ include 'sidebar.php';
                         options: {
                             scales: {
                                 x: {
-                                  
+
                                     stacked: true,
                                     title: {
                                         display: true,
@@ -412,7 +424,7 @@ include 'sidebar.php';
                                     }
                                 },
                                 y: {
-                                  color: '#fff',
+                                    color: '#fff',
                                     stacked: true,
                                     beginAtZero: true,
                                     title: {
@@ -686,7 +698,7 @@ include 'sidebar.php';
             return colors[rating] + opacity + ')';
         }
     </script>
-   
+
 </body>
 
 </html>
