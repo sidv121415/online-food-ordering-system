@@ -77,8 +77,8 @@ $userinfo = get_UserInfo($useremail);
 
     .navbar-brand,
     .offcanvas-header {
-      color: #fb4a36;
-      font-family: "Chewy", system-ui;
+      color:#FFC107;
+      font-family:system-ui;
       font-optical-sizing: auto;
       font-weight: 500;
       font-style: normal;
@@ -106,7 +106,7 @@ $userinfo = get_UserInfo($useremail);
       overflow: hidden;
       transition-duration: 0.3s;
       box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-      background-color: #fb4a36;
+      background-color: #FFC107;
     }
 
     /* plus sign */
@@ -191,7 +191,7 @@ $userinfo = get_UserInfo($useremail);
       border: none;
       margin-left: -50px !important;
       text-align: center;
-      background-color: #ffbda1;
+      background-color: #FBE9E7;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
@@ -202,7 +202,7 @@ $userinfo = get_UserInfo($useremail);
     }
 
     .dropdown-toggle:hover {
-      color: #fb4a36;
+      color: #FFC107;
     }
 
     .navbar-toggler-icon {
@@ -212,17 +212,17 @@ $userinfo = get_UserInfo($useremail);
 
     .nav-link:hover,
     .nav-link.active {
-      color: #fb4a36;
+      color: #FFC107;
     }
 
     .navbar-nav .nav-link.active,
     .navbar-nav .nav-link:hover,
     .navbar-nav .nav-link:focus {
-      color: #fb4a36;
+      color: #FFC107;
     }
 
     .offcanvas-header {
-      background-color: #ffbda1;
+      background-color: #FFC107;
     }
 
 
@@ -236,10 +236,8 @@ $userinfo = get_UserInfo($useremail);
     }
 
     .navbar {
-      border-bottom-left-radius: 80px;
-      border-bottom-right-radius: 80px;
       padding: 5px 0px 0px 0px;
-      background-color: #ffbda1;
+      background-color:#FBE9E7;
     }
 
     .cart {
@@ -253,7 +251,7 @@ $userinfo = get_UserInfo($useremail);
 
     /* Profile icon hover effect */
     .nav-item.dropdown .nav-link:hover {
-      color: #fb4a36;
+      color:#FBE9E7;
     }
 
 
@@ -262,7 +260,7 @@ $userinfo = get_UserInfo($useremail);
     }
 
     .dropdown-item:hover {
-      background-color: #fb4a36;
+      background-color: #FFC107;
       color: white;
     }
 
@@ -289,11 +287,11 @@ $userinfo = get_UserInfo($useremail);
     }
 
     .offcanvas-body {
-      background: #ffbda1;
+      background: #FBE9E7;
     }
 
     .offcanvas-header {
-      border-bottom: 1px solid #fb4a36;
+      border-bottom: 1px solid #FFC107;
     }
 
     .btn-close {
@@ -302,7 +300,7 @@ $userinfo = get_UserInfo($useremail);
 
     .navbar .active {
 
-      color: #fb4a36;
+      color: #FFC107;
       font-weight: 700;
     }
   </style>
@@ -318,7 +316,7 @@ $userinfo = get_UserInfo($useremail);
   <div>
     <nav class="navbar navbar-expand-md fixed-top">
       <div class="container-fluid nav-container">
-        <a class="navbar-brand me-auto logo" href="index.php">Grill 'N' Chill</a>
+        <a class="navbar-brand me-auto logo" href="index.php">NourishNest</a>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
@@ -347,9 +345,6 @@ $userinfo = get_UserInfo($useremail);
               </li>
               <li class="nav-item">
                 <a class="nav-link mx-lg-2 <?php echo $current_page == 'index.php#About-Us' ? 'active' : ''; ?>" href="index.php#About-Us">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link mx-lg-2 <?php echo $current_page == '#review' ? 'active' : ''; ?>" href="#review">Review</a>
               </li>
             </ul>
           </div>

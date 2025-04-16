@@ -38,8 +38,8 @@
 
     .navbar-brand,
     .offcanvas-header {
-      color: #fb4a36;
-      font-family: "Chewy", system-ui;
+      color:#FFC107;
+      font-family:system-ui;
       font-optical-sizing: auto;
       font-weight: 500;
       font-style: normal;
@@ -66,8 +66,8 @@
       position: relative;
       overflow: hidden;
       transition-duration: 0.3s;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-      background-color: #fb4a36;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      background-color:#FFC107;
     }
 
     /* plus sign */
@@ -93,7 +93,7 @@
       right: 0%;
       width: 0%;
       opacity: 0;
-      color: #1d1818;
+      color:white;
       font-size: 1.2em;
       font-weight: 500;
       transition-duration: 0.3s;
@@ -159,16 +159,16 @@
 
 
     .dropdown-item {
-      color: #212529;
+      color:black;
     }
 
     .dropdown-item:hover {
-      background-color: #fb4a36;
+      background-color: #FFC107;
       color: white;
     }
 
     .nav-item.dropdown .nav-link:hover {
-      color: #fb4a36;
+      color: #FFC107;
     }
 
 
@@ -181,13 +181,13 @@
 
     .nav-link:hover,
     .nav-link.active {
-      color: #fb4a36;
+      color: #FFC107;
     }
 
     .navbar-nav .nav-link.active,
     .navbar-nav .nav-link:hover,
     .navbar-nav .nav-link:focus {
-      color: #fb4a36;
+      color: #FFC107;
     }
 
     .offcanvas-header {
@@ -204,11 +204,9 @@
       color: white;
     }
 
-    .navbar {
-      border-bottom-left-radius: 80px;
-      border-bottom-right-radius: 80px;
+    .navbar {;
       padding: 5px 0px 0px 0px;
-      background-color: #ffbda1;
+      background-color: #FBE9E7;
     }
 
     .cart {
@@ -218,7 +216,7 @@
     }
 
     .offcanvas-body {
-      background: #ffbda1;
+      background: #FBE9E7;
     }
 
     .offcanvas-header {
@@ -227,7 +225,7 @@
 
     .navbar .active {
 
-      color: #fb4a36;
+      color: #FBE9E7;
       font-weight: 700;
     }
   </style>
@@ -243,7 +241,7 @@
   <div>
     <nav class="navbar navbar-expand-md fixed-top">
       <div class="container-fluid nav-container">
-        <a class="navbar-brand me-auto logo" href="index.php">Grill 'N' Chill</a>
+        <a class="navbar-brand me-auto logo" href="index.php">NourishNest</a>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
@@ -272,9 +270,6 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link mx-lg-2 <?php echo $current_page == 'index.php#About-Us' ? 'active' : ''; ?>" href="index.php#About-Us">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link mx-lg-2 <?php echo $current_page == '#review' ? 'active' : ''; ?>" href="#review">Review</a>
               </li>
             </ul>
           </div>

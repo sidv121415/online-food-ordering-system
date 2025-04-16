@@ -348,10 +348,6 @@ $orderItemsResult = $stmt->get_result();
         </div>
     </div>
 
-    <?php
-include_once ('footer.html');
-?>
-
 <script>
     $(document).ready(function() {
       console.log('Page is ready. Calling load_cart_item_number.');

@@ -397,10 +397,6 @@ include 'db_connection.php';
             </form>
         </div>
     </div>
-   
-    <?php
-include_once ('footer.html');
-?>
 
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

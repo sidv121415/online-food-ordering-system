@@ -76,18 +76,18 @@ $conn->close();
   <div class="main">
     <section>
       <div class="container mt-3">
-        <div class="row d-flex justify-content-start align-items-start main-container">
-          <div class="col-md-5 col-sm-12 col-lg-5 reveal main-text mb-4 text-align-justify mt-5" data-aos="fade-up">
-            <h2>Welcome to <span style="color: #fb4a36;"> Grill 'N' Chill,</span></h2>
+        <div class="row d-flex justify-content-center align-items-start main-container">
+        <h1 class="mt-5">Welcome to <span style="color: #FFC107;"> NourishNest,</span></h1>
+          <div class="ml-5 col-md-5 col-sm-12 col-lg-5 reveal main-text mb-5 text-align-justify mt-5" data-aos="fade-up">
             <h4 style="color: gray; font-weight: 450;">"Where Hot Flavors Meet Cool Comfort."</h4>
-            <p style="font-size: 18px; text-align: justify;">
+            <p style="font-size: 26px; text-align:justify;">
               Dive into a culinary celebration where every dish bursts with
-              flavor. At Grill 'N' Chill, we believe in making every meal an
+              flavor. At NourishNest we believe in making every meal an
               unforgettable experience. Whether you're here for a casual meal or a
               special occasion, our vibrant dishes will leave a lasting
               impression.
             </p>
-            <div class="buttondiv">
+            <div class="buttondiv d-flex justify-content-center align-items-center mt-5">
               <div>
                 <a href="login.php">
                   <button class="button">
@@ -112,9 +112,6 @@ $conn->close();
                 </a>
               </div>
             </div>
-          </div>
-          <div class="col-md-7 col-sm-12 col-lg-7 d-flex justify-content-center align-items-start slide-in-right main-image">
-            <img src="images/Pizza.png" class="img" style=" width: 85%; height: 80%;">
           </div>
         </div>
         <div class="row">
@@ -205,13 +202,10 @@ $conn->close();
 
   <!-- Why Choose Us Section  -->
   <section class="why-choose-us" id="why-choose-us">
-    <div class="container">
+    <div class="container mb-5">
       <div class="row why-us-content">
-        <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 mt-5 reveal d-flex justify-content-start align-items-start" data-aos="fade-up">
-          <img src="images/Why-Us.png" width="100%" height="auto" loading="lazy" alt="delivery boy" class="w-100 delivery-img" data-delivery-boy>
-        </div>
-        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 d-flex flex-column justify-content-center reveal" data-aos="fade-up">
-          <h1>WHY <span>CHOOSE US?</span></h1>
+        <div class="d-flex flex-column justify-content-center reveal" data-aos="fade-up">
+          <h1>WHY <span style="color:#FFC107;">CHOOSE US?</span></h1>
           <p class="content">Our restaurant offers the best food delivery service with fresh and high-quality ingredients.</p>
           <ul class="why-choose-us-list">
             <li data-aos="fade-up">
@@ -256,7 +250,7 @@ $conn->close();
 
       <!-- Top picks section -->
       <div class="popular reveal" data-aos="fade-up">
-        <h1 class="text-center mt-3">OUR <span>TOP PICKS</span></h1>
+        <h1 class="text-center mt-5">OUR <span style="color:#FFC107;">TOP PICKS</span></h1>
         <P class="text-center" style="font-size: 1.3rem;">~Handpicked meals that are a hit with everyone.</P>
 
         <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="8000" data-aos="fade-up">
@@ -308,32 +302,31 @@ $conn->close();
   <!-- About Us section -->
   <div class="aboutus" id="About-Us" style="background-image: url(images/about-bg.png); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <section class="our-story-section p-5">
-      <div class="container ">
-        <div class="row" data-aos="fade-up">
-          <h1 style="text-align: center;"><span style="color: #fb4a36;">ABOUT </span>US</h1>
-          <h4 style="text-align: center;" class="mb-5">Crafting Memorable Meals!</h4>
+        <div class="container d-flex flex-column align-items-center justify-content-center text-center">
+            <div class="row" data-aos="fade-up">
+                <h1><span style="color: #FFC107;">ABOUT </span>US</h1>
+                <h4 class="mb-5">Crafting Memorable Meals!</h4>
+            </div>
+            <div class="story-content row mb-2 d-flex justify-content-center">
+                <div class="story-text reveal mt-2 text-center" data-aos="fade-up" data-os-interval="300">
+                    <p>At NourishNest, we are passionate about celebrating food. Our chefs bring a touch of creativity to every dish, ensuring a feast for your senses. Join us for an extraordinary dining experience that celebrates flavor and joy.</p>
+                    <div class="d-flex flex-row justify-content-center align-items-center mt-4">
+                        <a href="menu.php" class="about_btn">
+                            <i class="fa-solid fa-burger"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="story-content row mb-2">
-          <div class="story-text col-lg-6 col-md-6 col-sm-12 reveal mt-2" data-aos="fade-up" data-os-interval="300">
-            <p>At <strong>Grill 'N' Chill</strong>, we are passionate about celebrating food. Our chefs bring a touch of creativity to every dish, ensuring a feast for your senses. Join us for an extraordinary dining experience that celebrates flavor and joy.</p>
-            <p>Founded in [2020], Grill 'N' Chill has been at the forefront of culinary innovation. Our commitment to using the freshest ingredients, combined with our chefs' expertise, has earned us a reputation for excellence. We believe that dining is not just about eating; it's about experiencing the art of food.</p>
-            <p>Whether you're looking for a romantic dinner, a family gathering, or a place to celebrate special occasions, Grill 'N' Chill offers the perfect ambiance and exquisite cuisine to make your visit unforgettable. Come and experience the joy of flavor with us!</p>
-            <a href="menu.php" class="about_btn">
-              <i class="fa-solid fa-burger"></i>Order Now
-            </a>
-          </div>
-          <div class="story-image col-lg-6 col-md-6 col-sm-12 d-flex justify-content-end align-items-start slide-in-right" data-aos="fade-up">
-            <img src="images/Burger.png" alt="Crafting Memorable Meals" style="width: 100%; height: auto;">
-          </div>
-        </div>
-      </div>
     </section>
-  </div>
+</div>
+
+
 
   <!-- Table Reservation -->
   <section class="table-reservation" id="Reservation">
     <div class="row text-center ms-4" data-aos="fade-up">
-      <h1 class="mb-2">TABLE <span style="color: #fb4a36;">RESERVATION</span></h1>
+      <h1 class="mb-2">TABLE <span style="color: #FFC107;">RESERVATION</span></h1>
       <h5 class="mb-5">Book your dining experience with us and enjoy a delightful meal.</h5>
     </div>
     <div class="table ms-4 me-5" data-aos="fade-up">
@@ -374,93 +367,14 @@ $conn->close();
                 <input type="number" id="guests" name="noOfGuests" required min="1">
               </div>
             </div>
-            <button type="submit" value="submit">Reserve Now</button>
+            <div>
+              <button type="submit" style="background-color:#FFC107;" value="submit">Reserve Now</button>
+          </div>
           </form>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Review  -->
-  <section class="testimonial" id="review">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
-          <div class="text-center mb-5" data-aos="fade-up">
-            <h1>Hear From Our <span>Happy Customers!</span></h1>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="clients-carousel owl-carousel" data-aos="fade-up">
-          <div class="single-box">
-            <div class="img-area"><img alt="" class="img-fluid" src="uploads/user-girl.png"></div>
-            <div class="content">
-              <p>"The food was fresh, and the flavors were incredible. I loved the variety on the menu. A great place for family dinners."</p>
-              <h4>-Ritika Singh</h4>
-            </div>
-          </div>
-          <div class="single-box">
-            <div class="img-area"><img alt="" class="img-fluid" src="uploads/user-boy.jpg"></div>
-            <div class="content">
-              <p>"The online ordering process was seamless and easy to navigate. My food arrived hot and on time. The delivery service was very professional."</p>
-              <h4>-Zidnan</h4>
-            </div>
-          </div>
-          <div class="single-box">
-            <div class="img-area"><img alt="" class="img-fluid" src="uploads/default.jpg"></div>
-            <div class="content">
-              <p>"Fantastic place! The burgers are juicy, and the pizzas are loaded with toppings. The staff is super friendly, and the service is quick. A new favorite spot!"</p>
-              <h4>-Dave Wood</h4>
-            </div>
-          </div>
-          <div class="single-box">
-            <div class="img-area"><img alt="" class="img-fluid" src="uploads/default.jpg"></div>
-            <div class="content">
-              <span class="rating-star"><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i><i class="icofont-star"></i></span>
-              <p>"The online ordering system is fantastic. It’s easy to customize my order, and the delivery is always prompt. The food arrives hot and tasty every time."</p>
-              <h4>-jimmy kimmel</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-row">
-        <div class="footer-col" id="contact">
-          <h4>Contact Us</h4>
-          <p>123 Galle Road, Colombo 04</p>
-          <p>Email: info@grillnchill.com</p>
-          <p>Phone: +94 77 123 4567</p>
-        </div>
-        <div class="footer-col">
-          <h4>Follow Us</h4>
-          <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Subscribe</h4>
-          <form action="#">
-            <input type="email" placeholder="Your email address" required style="background-color: #f9f9f9; color: #333; margin-top: 12px;">
-            <button type="submit">Subscribe</button>
-          </form>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <h4>&copy; 2024 Authored by Asna Assalam. All Rights Reserved.</h4>
-      </div>
-    </div>
-  </footer>
-
-
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
   </script>

@@ -48,6 +48,9 @@
 						<i class="fas fa-eye-slash" id="toggleLoginPassword" style="cursor: pointer;"></i>
 					</div>
 					<input type="submit" value="Login" class="submit solid" id="loginButton" />
+					<button class="btn btn-sty" id="sign-up-btn">
+						New User? Sign up
+					</button>
 
 					<?php
 
@@ -85,37 +88,10 @@
 						<i class="fas fa-eye-slash" id="toggleRegisterPassword" style="cursor: pointer;"></i>
 					</div>
 					<input type="submit" class="submit" value="Sign up" id="registerButton" />
-
-
-
+					<button class="btn btn-sty" id="sign-in-btn">
+						Already have an account? Sign In
+					</button>
 				</form>
-			</div>
-		</div>
-
-		<div class="panels-container">
-			<div class="panel left-panel">
-				<div class="content">
-					<h3>New to Our Restaurant?</h3>
-					<p>
-						Join us today and enjoy the convenience of online ordering. Get exclusive offers and track your orders easily.
-					</p>
-					<button class="btn transparent" id="sign-up-btn">
-						Sign up
-					</button>
-				</div>
-				<img src="images/form-pic.png" class="image" alt="" />
-			</div>
-			<div class="panel right-panel">
-				<div class="content">
-					<h3>Our Customer?</h3>
-					<p>
-						Sign in to continue enjoying our delicious meals and manage your orders seamlessly.
-					</p>
-					<button class="btn transparent" id="sign-in-btn">
-						Sign in
-					</button>
-				</div>
-				<img src="images/form-pic2.png" class="image" alt="" style="margin-bottom: 400px" />
 			</div>
 		</div>
 	</div>

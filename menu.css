@@ -46,11 +46,11 @@ section:nth-child(even) {
   font-size: 20px;
   margin-left: 15px;
   font-weight: 400;
-  color: #d92420;
+  color:black;
 }
 
 .addItemBtn {
-  background-color: #fb4a36;
+  background-color: #FFC107;
   border: none;
   color: white;
   text-align: center;
@@ -92,7 +92,7 @@ section:nth-child(even) {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  background-color: #fcafa7;
+  background-color:	#FBE9E7;
   padding: 10px 8px 10px 8px;
   border-radius: 8px;
   gap: 15px;

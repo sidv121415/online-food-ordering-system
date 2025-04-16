@@ -119,10 +119,6 @@ while ($row = $categoryResult->fetch_assoc()) {
         <span class="pt-3"><strong>You must log in to add items to the cart.</strong></span><br>
         <button class="toast-btn toast-ok">Okay</button>
     </div>
-    <!--Footer-->
-    <?php
-    include_once('footer.html');
-    ?>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
     <script type="text/javascript">

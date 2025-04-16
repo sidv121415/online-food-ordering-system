@@ -100,7 +100,7 @@ $itemsResult = $stmt->get_result();
             </li>
           <?php endwhile; ?>
         <?php else: ?>
-          <li class="list-group-item">
+          <li class="list-group-item" style="background-color:#FBE9E7;">
             Your cart is empty!
           </li>
         <?php endif; ?>
@@ -125,10 +125,6 @@ $itemsResult = $stmt->get_result();
           <input type="radio" id="cash" name="payment_mode" value="Cash">
           <label for="Cash">Cash</label>
         </div>
-        <div>
-          <input type="radio" id="card" name="payment_mode" value="Card" disabled style="cursor: not-allowed;">
-          <label for="Card">Card</label>
-        </div>
       </div>
       <div class="summary-details">
         <p><strong>Delivery Fee: </strong></p>
@@ -143,7 +139,7 @@ $itemsResult = $stmt->get_result();
       <form id="checkout-form" action="order_review.php" method="post">
         <input type="hidden" id="selected-items" name="selected_items">
         <input type="hidden" id="payment-mode" name="payment_mode">
-        <button type="button" id="checkout-button">Checkout</button>
+        <button type="button" style="background-color:#FFC107; border-color:white;" id="checkout-button">Checkout</button>
       </form>
 
 
@@ -152,9 +148,6 @@ $itemsResult = $stmt->get_result();
 
   </div>
 
-  <?php
-  include_once('footer.html');
-  ?>
 
   <!-- Bootstrap JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
